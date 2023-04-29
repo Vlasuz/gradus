@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 
 class ModelPlayers {
   final String title;
-
   final Color colorIcon;
   final Color colorBody;
   final SvgPicture icon;
@@ -15,7 +14,6 @@ class ModelPlayers {
     this.icon
   );
 }
-
 final List<ModelPlayers> allPlayers = [
   ModelPlayers(
     'Жареная селёдка',
@@ -42,3 +40,17 @@ final List<ModelPlayers> allPlayers = [
     SvgPicture.asset('assets/icons/player-avatar-2.svg'),
   ),
 ];
+
+
+
+bool calculateSex = false;
+bool calculateStomach = false;
+double calculateSum = 0.0;
+String calculateWeight = '';
+String calculateHeight = '';
+String calculateDrinkPercent1 = '0';
+String calculateDrinkMl1 = '0';
+String calculateDrinkPercent2 = '0';
+String calculateDrinkMl2 = '0';
+String calculateDrinkPercent3 = '0';
+String calculateDrinkMl3 = '0';

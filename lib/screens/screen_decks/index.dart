@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../components/button_green.dart';
 import '../../components/wrapper_screens.dart';
 import '../../constants.dart';
 import 'components/deck_item.dart';
 import 'components/screen_top.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 
-import 'components/switcher_custom.dart';
-
-class ScreenStartCards extends StatelessWidget {
-  const ScreenStartCards({Key? key}) : super(key: key);
+class ScreenDecks extends StatelessWidget {
+  const ScreenDecks({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +25,9 @@ class ScreenStartCards extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              const Text(
-                'Выбери колоды:',
-                style: TextStyle(fontFamily: gFontNunBlack, fontSize: 20.0),
-              ),
-              const Spacer(),
               ConstrainedBox(
                 constraints: BoxConstraints(
-                  maxHeight: 600.0
+                    maxHeight: MediaQuery.of(context).size.height - 160
                 ),
                 child: SingleChildScrollView(
                   child: Column(
@@ -47,16 +37,11 @@ class ScreenStartCards extends StatelessWidget {
                       DeckItem(),
                       DeckItem(),
                       DeckItem(),
+                      DeckItem(),
                     ],
                   ),
                 ),
               ),
-              const Spacer(),
-              ButtonGreen(
-                  text: "Понеслась",
-                  onPressed: () {
-                    // Navigator.pushNamed(context, '/start-cards');
-                  })
             ],
           ),
         ),
@@ -64,3 +49,4 @@ class ScreenStartCards extends StatelessWidget {
     );
   }
 }
+

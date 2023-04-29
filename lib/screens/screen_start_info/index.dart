@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradus/components/wrapper_screens_elems.dart';
 
 import '../../components/button_green.dart';
-import '../../constatns.dart';
+import '../../constants.dart';
 import 'components/screen_top.dart';
 
 class ScreenStartInfo extends StatelessWidget {

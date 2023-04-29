@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../constatns.dart';
+import '../../../constants.dart';
 
 class PlayerItem extends StatelessWidget {
   const PlayerItem({

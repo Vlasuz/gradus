@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../components/button_green.dart';
 import '../../../components/button_orange.dart';
 import '../../../components/button_outline.dart';
-import '../../../constatns.dart';
+import '../../../constants.dart';
 
 class MainButtons extends StatelessWidget {
   const MainButtons({
@@ -29,7 +29,7 @@ class MainButtons extends StatelessWidget {
           ButtonOrange(
             text: "Додати карти",
             onPressed: () {
-              print('Add cards');
+              Navigator.pushNamed(context, '/decks');
             },
           ),
           SizedBox(
@@ -45,7 +45,7 @@ class MainButtons extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              print('Rules');
+              Navigator.pushNamed(context, '/rules');
             },
           ),
           SizedBox(
@@ -71,7 +71,7 @@ class MainButtons extends StatelessWidget {
               ],
             ),
             onPressed: () {
-              print('Calculator');
+              Navigator.pushNamed(context, '/alco-calculate');
             },
           ),
         ],

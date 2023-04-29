@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradus/constatns.dart';
+import 'package:gradus/constants.dart';
 import '../../components/button_outline.dart';
 import '../../components/wrapper_screens.dart';
 import 'components/main_buttons.dart';

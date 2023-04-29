@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gradus/constatns.dart';
+import 'package:gradus/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../components/button_green.dart';
@@ -25,7 +25,8 @@ class ScreenRules extends StatelessWidget {
           ButtonGreen(
             text: 'Понятненько',
             onPressed: () {
-              Navigator.pushNamed(context, '/start');
+              // Navigator.pushNamed(context, '/start');
+              Navigator.pop(context);
             },
           ),
         ],

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gradus/screens/screen_start_cards/components/switcher_custom.dart';
 
-import '../../../constatns.dart';
+import '../../../constants.dart';
 
 class DeckItem extends StatelessWidget {
   const DeckItem({
@@ -14,10 +14,10 @@ class DeckItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10.0),
       margin: EdgeInsets.only(bottom: 10.0),
-      height: 150.0,
       decoration: BoxDecoration(
           color: gWhiteColor, borderRadius: BorderRadius.circular(10.0)),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -66,7 +66,7 @@ class DeckItem extends StatelessWidget {
                     SwitchCustom()
                   ],
                 ),
-                Spacer(),
+                SizedBox(height: 15.0,),
                 RichText(
                   text: const TextSpan(
                       text: "Пробная ",

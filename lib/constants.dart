@@ -8,5 +8,6 @@ const gBlueColor    = Color(0xFF005BBB);
 const gOrangeColor  = Color(0xFFFF8B02);
 
 const gFontRobReg   = 'RobotoCondensed Regular';
+const gFontRobBold  = 'RobotoCondensed Bold';
 const gFontNunBold  = 'Nunito Bold';
 const gFontNunBlack = 'Nunito Black';

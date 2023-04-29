@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradus/components/button_green.dart';
 import 'package:gradus/components/button_orange.dart';
 import 'package:gradus/components/button_outline.dart';
-import 'package:gradus/constatns.dart';
+import 'package:gradus/constants.dart';
 
 import '../../components/wrapper_screens.dart';
 import 'components/player_item.dart';

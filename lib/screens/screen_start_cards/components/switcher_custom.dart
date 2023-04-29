@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
-import '../../../constatns.dart';
+import '../../../constants.dart';
 
 class SwitchCustom extends StatefulWidget {
   const SwitchCustom({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../constatns.dart';
+import '../../../constants.dart';
 
 class ButtonOrange extends StatefulWidget {
   ButtonOrange({

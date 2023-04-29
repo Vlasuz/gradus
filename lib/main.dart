@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gradus/screens/screen_alcocalculate/index.dart';
+import 'package:gradus/screens/screen_alcocalculate_done/index.dart';
+import 'package:gradus/screens/screen_decks/index.dart';
 import 'package:gradus/screens/screen_rules/index.dart';
 import 'package:gradus/screens/screen_start/index.dart';
 import 'package:gradus/screens/screen_start_cards/index.dart';
@@ -17,11 +20,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
-        useMaterial3: true,
-        colorSchemeSeed: const Color(0xff00A878),
+        // useMaterial3: true,
+        // colorSchemeSeed: const Color(0xff00A878),
       ),
+      initialRoute: '/start',
       routes: {
-        '/': (context) => const ScreenRules(),
+        '/rules': (context) => const ScreenRules(),
+        '/decks': (context) => const ScreenDecks(),
+        '/alco-calculate': (context) => const ScreenAlcoCalculate(),
+        '/alco-calculate-done': (context) => const ScreenAlcoCalculateDone(),
         '/start': (context) => const ScreenMain(),
         '/start-players': (context) => ScreenStartPlayers(),
         '/start-info': (context) => ScreenStartInfo(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constatns.dart';
+import '../constants.dart';
 
 class ButtonOutline extends StatefulWidget {
   const ButtonOutline({Key? key, required this.onPressed, required this.child}) : super(key: key);
