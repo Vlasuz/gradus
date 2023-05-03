@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:gradus/screens/screen_alcocalculate/index.dart';
 import 'package:gradus/screens/screen_alcocalculate_done/index.dart';
 import 'package:gradus/screens/screen_decks/index.dart';
+import 'package:gradus/screens/screen_game/game_step_1/index.dart';
+import 'package:gradus/screens/screen_game/game_step_2/index.dart';
+import 'package:gradus/screens/screen_game/game_step_end/index.dart';
+import 'package:gradus/screens/screen_game/game_step_looser/index.dart';
+import 'package:gradus/screens/screen_game/game_step_menu/index.dart';
+import 'package:gradus/screens/screen_game/game_step_results/index.dart';
+import 'package:gradus/screens/screen_game/game_step_winner/index.dart';
 import 'package:gradus/screens/screen_rules/index.dart';
 import 'package:gradus/screens/screen_start/index.dart';
 import 'package:gradus/screens/screen_start_cards/index.dart';
@@ -33,6 +40,13 @@ class MyApp extends StatelessWidget {
         '/start-players': (context) => ScreenStartPlayers(),
         '/start-info': (context) => ScreenStartInfo(),
         '/start-cards': (context) => ScreenStartCards(),
+        '/game-step-1': (context) => GameStep1(),
+        '/game-step-2': (context) => GameStep2(),
+        '/game-step-menu': (context) => GameStepMenu(),
+        '/game-step-winner': (context) => GameStepWinner(),
+        '/game-step-looser': (context) => GameStepLooser(),
+        '/game-step-result': (context) => GameStepResult(),
+        '/game-step-end': (context) => GameStepEnd(),
       },
     );
   }

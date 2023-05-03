@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gradus/constants.dart';
 
-class TopButtons extends StatelessWidget {
-  const TopButtons({
-    super.key,
+class TopButtons extends StatefulWidget {
+  TopButtons({
+    super.key, required this.isSettingsOpen,
   });
 
+  final isSettingsOpen;
+
+  @override
+  State<TopButtons> createState() => _TopButtonsState();
+}
+
+class _TopButtonsState extends State<TopButtons> {
   @override
   Widget build(BuildContext context) {
+    final _formKey = GlobalKey<FormState>();
+
     return Container(
-      width: 300.0,
+      width: MediaQuery.of(context).size.width - 80,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -18,22 +28,20 @@ class TopButtons extends StatelessWidget {
             child: TextButton(
               style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
-                  foregroundColor: Colors.transparent
-              ),
-              onPressed: () {
-                print('Settings');
-              },
+                  foregroundColor: Colors.transparent),
+              onPressed: widget.isSettingsOpen,
               child: SvgPicture.asset('assets/icons/setting.svg'),
             ),
           ),
-          SizedBox(width: 20.0,),
+          SizedBox(
+            width: 20.0,
+          ),
           SizedBox(
             width: 20.0,
             child: TextButton(
               style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
-                  foregroundColor: Colors.transparent
-              ),
+                  foregroundColor: Colors.transparent),
               onPressed: () {
                 print('share');
               },

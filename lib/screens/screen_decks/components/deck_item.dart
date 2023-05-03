@@ -14,6 +14,7 @@ class DeckItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10.0),
       margin: EdgeInsets.only(bottom: 10.0),
+      width: MediaQuery.of(context).size.width - 40,
       decoration: BoxDecoration(
           color: gWhiteColor, borderRadius: BorderRadius.circular(10.0)),
       child: Column(

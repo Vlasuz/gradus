@@ -37,8 +37,7 @@ class ScreenStartCards extends StatelessWidget {
               const Spacer(),
               ConstrainedBox(
                 constraints: BoxConstraints(
-                  maxHeight: 600.0
-                ),
+                    maxHeight: MediaQuery.of(context).size.height - 300),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -55,7 +54,7 @@ class ScreenStartCards extends StatelessWidget {
               ButtonGreen(
                   text: "Понеслась",
                   onPressed: () {
-                    // Navigator.pushNamed(context, '/start-cards');
+                    Navigator.pushNamed(context, '/game-step-1');
                   })
             ],
           ),

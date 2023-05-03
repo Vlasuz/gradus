@@ -11,12 +11,21 @@ class WrapperScreens extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          child: Container(
-            padding: EdgeInsets.all(10.0),
-            child: Center(
-              child: SvgPicture.asset(
-                'assets/images/corners.svg',
-                width: double.infinity,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: 2000.0,
+              minWidth: 2000.0,
+            ),
+            child: Container(
+              padding: EdgeInsets.all(10.0),
+              child: Center(
+                child: SvgPicture.asset(
+                  'assets/images/corners.svg',
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                ),
               ),
             ),
           ),

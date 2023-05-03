@@ -20,6 +20,7 @@ class ScreenStartPlayers extends StatefulWidget {
 
 class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
   var _numOfPlayers = 2;
+  ScrollController _scrollController = new ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +63,11 @@ class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
               ),
               const Spacer(),
               ConstrainedBox(
-                constraints: const BoxConstraints(
-                  maxHeight: 350.0,
+                constraints: BoxConstraints(
+                  maxHeight: MediaQuery.of(context).size.height - 600,
                 ),
                 child: SingleChildScrollView(
+                  controller: _scrollController,
                   child: Column(
                     children: players,
                   ),
@@ -87,6 +89,18 @@ class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
                     if(_numOfPlayers < allPlayers.length) {
                       _numOfPlayers++;
                     }
+                    // _scrollController.animateTo(
+                    //   _scrollController.position.maxScrollExtent,
+                    //   curve: Curves.easeOut,
+                    //   duration: const Duration(milliseconds: 300),
+                    // );
+                    Future.delayed(Duration(milliseconds: 50)).asStream().listen((event) {
+                      _scrollController.animateTo(
+                        _scrollController.position.maxScrollExtent,
+                        curve: Curves.easeOut,
+                        duration: const Duration(milliseconds: 300),
+                      );
+                    });
                   });
                 },
                 child: Text('Добавить игрока'.toUpperCase(), style: const TextStyle(fontFamily: gFontNunBold, color: gWhiteColor, fontSize: 16.0),),

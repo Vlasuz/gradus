@@ -64,6 +64,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/images/game_cards/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -92,6 +93,9 @@ flutter:
     - family: Nunito Bold
       fonts:
         - asset: assets/fonts/nunito/Nunito-Bold.ttf
+    - family: Nunito Regular
+      fonts:
+        - asset: assets/fonts/nunito/Nunito-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

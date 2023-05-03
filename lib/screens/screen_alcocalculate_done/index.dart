@@ -30,51 +30,54 @@ class ScreenAlcoCalculateDone extends StatelessWidget {
     return Scaffold(
       backgroundColor: gMainColor,
       body: WrapperScreens(
-        child: Container(
-          width: double.infinity,
-          margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
-          child: Column(
-            children: [
-              const ScreenTop(),
-              AlcoWhiteInfo(
-                summary: calculateSum.toStringAsFixed(2),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              const SizedBox(
-                width: 350.0,
-                child: Text(
-                  'это ориентировочная информация для ознакомления на основании приблизительных расчётов, её нельзя использовать как доказательство при спорах, медицинских заключениях, мы не несём ответственности за её использование',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 16.0, fontFamily: gFontRobReg, height: 1.5),
+        child: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height,
+            margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
+            child: Column(
+              children: [
+                const ScreenTop(),
+                AlcoWhiteInfo(
+                  summary: calculateSum.toStringAsFixed(2),
                 ),
-              ),
-              const Spacer(),
-              ButtonOutline(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset('assets/icons/arrow-back-button.svg'),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      'вернуться'.toUpperCase(),
-                      style: const TextStyle(
-                        fontFamily: gFontNunBold,
-                        fontSize: 16.0,
-                        color: gWhiteColor,
+                const SizedBox(
+                  height: 10.0,
+                ),
+                const SizedBox(
+                  width: 350.0,
+                  child: Text(
+                    'это ориентировочная информация для ознакомления на основании приблизительных расчётов, её нельзя использовать как доказательство при спорах, медицинских заключениях, мы не несём ответственности за её использование',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 16.0, fontFamily: gFontRobReg, height: 1.5),
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height / 30,),
+                ButtonOutline(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset('assets/icons/arrow-back-button.svg'),
+                      const SizedBox(
+                        width: 10.0,
                       ),
-                    ),
-                  ],
+                      Text(
+                        'вернуться'.toUpperCase(),
+                        style: const TextStyle(
+                          fontFamily: gFontNunBold,
+                          fontSize: 16.0,
+                          color: gWhiteColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
