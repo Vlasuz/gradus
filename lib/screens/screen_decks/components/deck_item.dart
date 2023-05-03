@@ -16,7 +16,9 @@ class DeckItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 10.0),
       width: MediaQuery.of(context).size.width - 40,
       decoration: BoxDecoration(
-          color: gWhiteColor, borderRadius: BorderRadius.circular(10.0)),
+        color: gWhiteColor,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
       child: Column(
         children: [
           Row(
@@ -120,16 +122,18 @@ class DeckItem extends StatelessWidget {
             width: double.infinity,
             margin: EdgeInsets.only(top: 20.0),
             decoration: BoxDecoration(
-              color: gOrangeColor,
-              borderRadius: BorderRadius.circular(50.0)
-            ),
+                color: gOrangeColor, borderRadius: BorderRadius.circular(50.0)),
             child: TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-                foregroundColor: gOrangeColor
+                  padding: EdgeInsets.zero, foregroundColor: gOrangeColor),
+              child: Text(
+                'купить'.toUpperCase(),
+                style: TextStyle(
+                    color: gWhiteColor,
+                    fontFamily: gFontNunBold,
+                    fontSize: 16.0),
               ),
-              child: Text('купить'.toUpperCase(), style: TextStyle(color: gWhiteColor, fontFamily: gFontNunBold, fontSize: 16.0),),
             ),
           ),
         ],

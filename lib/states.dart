@@ -72,9 +72,14 @@ bool calculateStomach = false;
 double calculateSum = 0.0;
 String calculateWeight = '';
 String calculateHeight = '';
-String calculateDrinkPercent1 = '0';
-String calculateDrinkMl1 = '0';
+String calculateDrinkPercent1 = '';
+String calculateDrinkMl1 = '';
 String calculateDrinkPercent2 = '0';
 String calculateDrinkMl2 = '0';
 String calculateDrinkPercent3 = '0';
 String calculateDrinkMl3 = '0';
+
+
+bool isOpenQuestionTop = false;
+
+bool isButtonClickCalculate = false;

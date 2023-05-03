@@ -60,7 +60,6 @@ class _ScreenMainState extends State<ScreenMain> {
             _isSettingsOpen ? Positioned(
               child: SettingsWindow(
                   onPressed: () {
-                    print('asd');
                     setState(() {
                       _isSettingsOpen = false;
                     });

@@ -20,6 +20,8 @@ class ScreenAlcoCalculate extends StatefulWidget {
 }
 
 class _ScreenAlcoCalculateState extends State<ScreenAlcoCalculate> {
+  bool _isButtonClick = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +43,7 @@ class _ScreenAlcoCalculateState extends State<ScreenAlcoCalculate> {
                       color: gWhiteColor,
                       borderRadius: BorderRadius.circular(10.0)),
                   child: Column(
-                    children: const [
+                    children: [
                       SwitchSex(),
                       DividerCustom(),
                       InputWeight(),
@@ -70,14 +72,23 @@ class _ScreenAlcoCalculateState extends State<ScreenAlcoCalculate> {
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height / 13,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 13,
+                ),
                 ButtonGreen(
-                    text: "Расчитать",
-                    onPressed: () {
-                      if(calculateWeight.length > 0 && calculateHeight.length > 0 && calculateDrinkPercent1.length > 0 && calculateDrinkMl1.length > 0) {
-                        Navigator.pushNamed(context, '/alco-calculate-done');
-                      }
-                    })
+                  text: "Расчитать",
+                  onPressed: () {
+                    setState(() {
+                      isButtonClickCalculate = true;
+                    });
+                    if (!calculateWeight.isEmpty &&
+                        !calculateHeight.isEmpty &&
+                        !calculateDrinkPercent1.isEmpty &&
+                        !calculateDrinkMl1.isEmpty) {
+                      Navigator.pushNamed(context, '/alco-calculate-done');
+                    }
+                  },
+                )
               ],
             ),
           ),

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradus/constants.dart';
+import 'package:gradus/states.dart';
 
-class ScreenTop extends StatelessWidget {
+class ScreenTop extends StatefulWidget {
   const ScreenTop({Key? key}) : super(key: key);
 
+  @override
+  State<ScreenTop> createState() => _ScreenTopState();
+}
+
+class _ScreenTopState extends State<ScreenTop> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,7 +43,8 @@ class ScreenTop extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 3.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 4.0, vertical: 3.0),
                 margin: const EdgeInsets.only(left: 10.0, right: 4.0),
                 decoration: BoxDecoration(
                     color: gGreenColor,
@@ -47,11 +54,14 @@ class ScreenTop extends StatelessWidget {
                   style: TextStyle(fontSize: 16.0, fontFamily: gFontRobBold),
                 ),
               ),
-              const Text('карт', style: TextStyle(
-                fontFamily: gFontRobReg,
-                fontSize: 12.0,
-                color: gWhiteColor,
-              ),),
+              const Text(
+                'карт',
+                style: TextStyle(
+                  fontFamily: gFontRobReg,
+                  fontSize: 12.0,
+                  color: gWhiteColor,
+                ),
+              ),
             ],
           ),
           Container(
@@ -61,7 +71,12 @@ class ScreenTop extends StatelessWidget {
               style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
                   foregroundColor: Colors.transparent),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  isOpenQuestionTop = true;
+                  print(isOpenQuestionTop);
+                });
+              },
               child: SvgPicture.asset('assets/icons/question.svg'),
             ),
           )

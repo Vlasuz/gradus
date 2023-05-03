@@ -4,13 +4,24 @@ import '../../../constants.dart';
 import '../../../states.dart';
 import 'custom_input.dart';
 
-class InputHeight extends StatelessWidget {
-  const InputHeight({
+class InputHeight extends StatefulWidget {
+  InputHeight({
     super.key,
   });
 
   @override
+  State<InputHeight> createState() => _InputHeightState();
+}
+
+class _InputHeightState extends State<InputHeight> {
+  String _input = '';
+
+  @override
   Widget build(BuildContext context) {
+    Color whichColorBorder = isButtonClickCalculate
+        ? (!_input.isEmpty ? Color(0xFFD9D9D9) : Color(0xFFFF0000))
+        : Color(0xFFD9D9D9);
+
     return Row(
       children: [
         Container(
@@ -28,8 +39,12 @@ class InputHeight extends StatelessWidget {
             children: [
               CustomInput(
                 width: 124.0,
+                border: whichColorBorder,
                 onChanged: (text) {
                   calculateHeight = text;
+                  setState(() {
+                    _input = text;
+                  });
                 },
               ),
               const SizedBox(
