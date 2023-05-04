@@ -33,7 +33,7 @@ class GameStepWinner extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(
                     top: 10.0, left: 20.0, right: 20.0, bottom: 17.0),
-                width: MediaQuery.of(context).size.width - 40,
+                width: MediaQuery.of(context).size.width - 60,
                 decoration: BoxDecoration(
                     color: gWhiteColor,
                     borderRadius: BorderRadius.circular(10.0)),

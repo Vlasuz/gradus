@@ -44,7 +44,7 @@ class GameStepMenu extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery.of(context).size.width - 60,
                         margin: EdgeInsets.only(bottom: 20.0),
                         padding: EdgeInsets.all(20.0),
                         decoration: BoxDecoration(
@@ -156,7 +156,7 @@ class GameStepMenu extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery.of(context).size.width - 60,
                         margin: const EdgeInsets.only(bottom: 20.0),
                         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                         decoration: BoxDecoration(
@@ -185,7 +185,7 @@ class GameStepMenu extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery.of(context).size.width - 60,
                         margin: const EdgeInsets.only(bottom: 20.0),
                         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                         decoration: BoxDecoration(
@@ -214,7 +214,7 @@ class GameStepMenu extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery.of(context).size.width - 60,
                         margin: const EdgeInsets.only(bottom: 20.0),
                         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                         decoration: BoxDecoration(
@@ -243,7 +243,7 @@ class GameStepMenu extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery.of(context).size.width - 60,
                         margin: const EdgeInsets.only(bottom: 20.0),
                         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                         decoration: BoxDecoration(
@@ -272,7 +272,7 @@ class GameStepMenu extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery.of(context).size.width - 60,
                         margin: const EdgeInsets.only(bottom: 20.0),
                         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                         decoration: BoxDecoration(
@@ -301,7 +301,7 @@ class GameStepMenu extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery.of(context).size.width - 60,
                         margin: const EdgeInsets.only(bottom: 20.0),
                         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                         decoration: BoxDecoration(

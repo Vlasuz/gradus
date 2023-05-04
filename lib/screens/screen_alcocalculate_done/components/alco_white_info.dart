@@ -30,7 +30,7 @@ class AlcoWhiteInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 20.0),
-      width: MediaQuery.of(context).size.width - 40,
+      width: MediaQuery.of(context).size.width - 60,
       padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
           color: gWhiteColor,

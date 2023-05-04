@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradus/components/modal_wrapper.dart';
+import 'package:gradus/helpers/languages.dart';
+import 'package:gradus/screens/screen_start/index.dart';
+import 'package:gradus/states.dart';
 
 import '../../../../constants.dart';
 import 'components/divider_custom.dart';
 import 'components/switcher_custom.dart';
 
-const List<String> list = <String>['ua', 'ru'];
+const List<String> list = <String>['ua', 'en'];
 
 Map<String, String> langCode() => {
       'ua': 'assets/icons/flag-ua.svg',
-      'ru': 'assets/icons/flag-en.svg',
+      'en': 'assets/icons/flag-en.svg',
     };
 
 class SettingsWindow extends StatefulWidget {
@@ -32,9 +35,9 @@ class _SettingsWindowState extends State<SettingsWindow> {
   Widget build(BuildContext context) {
     return ModalWrapper(
       innerWidget: [
-        const Text(
-          'Настройки',
-          style: TextStyle(
+        Text(
+          language.isEmpty ? '' : language['settings'],
+          style: const TextStyle(
             color: gMainColor,
             fontSize: 16.0,
             fontFamily: gFontNunBold,
@@ -54,7 +57,14 @@ class _SettingsWindowState extends State<SettingsWindow> {
                 fontSize: 16.0,
               ),
             ),
-            SwitchCustom()
+            SwitchCustom(
+              onSwitched: (val) {
+                setState(() {
+                  isTurnVolume = val;
+                });
+              },
+              switchedValue: isTurnVolume
+            )
           ],
         ),
         const DividerCustom(),
@@ -69,7 +79,14 @@ class _SettingsWindowState extends State<SettingsWindow> {
                 fontSize: 16.0,
               ),
             ),
-            SwitchCustom()
+            SwitchCustom(
+                onSwitched: (val) {
+                  setState(() {
+                    isTurnAutoShuffling = val;
+                  });
+                },
+                switchedValue: isTurnAutoShuffling
+            )
           ],
         ),
         const DividerCustom(),
@@ -77,7 +94,7 @@ class _SettingsWindowState extends State<SettingsWindow> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
-              'Язык',
+              "Язык",
               style: TextStyle(
                 color: gMainColor,
                 fontFamily: gFontRobReg,
@@ -98,6 +115,15 @@ class _SettingsWindowState extends State<SettingsWindow> {
                 setState(() {
                   dropdownValue = value!;
                   languageCode = value;
+                  lang();
+                  Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) => const ScreenMain(),
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
+                    ),
+                  );
                 });
               },
               items: list.map<DropdownMenuItem<String>>((String value) {

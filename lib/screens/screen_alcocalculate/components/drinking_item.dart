@@ -45,7 +45,7 @@ class _DrinkItemState extends State<DrinkItem> {
           child: Row(
             children: [
               CustomInput(
-                width: MediaQuery.of(context).size.width / 4.5,
+                width: MediaQuery.of(context).size.width / 5,
                 border: widget.numberItem == '1' ? whichColorBorder : null,
                 onChanged: (text) {
                   if (widget.numberItem == '1') {
@@ -74,7 +74,7 @@ class _DrinkItemState extends State<DrinkItem> {
           child: Row(
             children: [
               CustomInput(
-                width: MediaQuery.of(context).size.width / 4.5,
+                width: MediaQuery.of(context).size.width / 5,
                 border: widget.numberItem == '1' ? whichColorBorder1 : null,
                 onChanged: (text) {
                   if (widget.numberItem == '1') {

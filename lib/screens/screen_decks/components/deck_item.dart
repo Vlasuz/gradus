@@ -7,14 +7,17 @@ import '../../../constants.dart';
 class DeckItem extends StatelessWidget {
   const DeckItem({
     super.key,
+    this.promoDeck = null,
   });
+
+  final promoDeck;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10.0),
       margin: EdgeInsets.only(bottom: 10.0),
-      width: MediaQuery.of(context).size.width - 40,
+      width: MediaQuery.of(context).size.width - 60,
       decoration: BoxDecoration(
         color: gWhiteColor,
         borderRadius: BorderRadius.circular(10.0),
@@ -46,7 +49,7 @@ class DeckItem extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
+                        children: const [
                           Text(
                             'Двигай телом',
                             style: TextStyle(
@@ -54,13 +57,12 @@ class DeckItem extends StatelessWidget {
                                 fontFamily: gFontNunBold,
                                 fontSize: 16.0),
                           ),
-                          // SvgPicture.asset('assets/icons/question-blue.svg')
                         ],
                       ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           '1,59 \$',
                           style: TextStyle(
@@ -86,33 +88,39 @@ class DeckItem extends StatelessWidget {
                     ),
                     RichText(
                       text: const TextSpan(
-                          text: "Пробная ",
-                          style: TextStyle(color: Color(0xFF808080)),
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: "– 15 карт",
-                                style: TextStyle(
-                                    color: gMainColor,
-                                    fontWeight: FontWeight.bold))
-                          ]),
+                        text: "Пробная ",
+                        style: TextStyle(color: Color(0xFF808080)),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: "– 15 карт",
+                            style: TextStyle(
+                              color: gMainColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     RichText(
                       text: const TextSpan(
-                          text: "Полная ",
-                          style: TextStyle(color: Color(0xFF808080)),
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: "– 60 карт ",
-                                style: TextStyle(
-                                    color: gMainColor,
-                                    fontWeight: FontWeight.bold)),
-                          ]),
+                        text: "Полная ",
+                        style: TextStyle(color: Color(0xFF808080)),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: "– 60 карт ",
+                            style: TextStyle(
+                              color: gMainColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    // Text(
-                    //   "+ отключение рекламы на месяц",
-                    //   style:
-                    //       TextStyle(color: gMainColor, fontWeight: FontWeight.bold),
-                    // ),
+                    Text(
+                      "+ отключение рекламы на месяц",
+                      style: TextStyle(
+                          color: gMainColor, fontWeight: FontWeight.bold),
+                    ),
                   ],
                 ),
               ),
@@ -122,17 +130,24 @@ class DeckItem extends StatelessWidget {
             width: double.infinity,
             margin: EdgeInsets.only(top: 20.0),
             decoration: BoxDecoration(
-                color: gOrangeColor, borderRadius: BorderRadius.circular(50.0)),
+              color: gOrangeColor,
+              borderRadius: BorderRadius.circular(50.0),
+            ),
             child: TextButton(
-              onPressed: () {},
+              onPressed: promoDeck == null ? (){
+                print('buy it now');
+              } : promoDeck,
               style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero, foregroundColor: gOrangeColor),
+                padding: EdgeInsets.zero,
+                foregroundColor: gOrangeColor,
+              ),
               child: Text(
                 'купить'.toUpperCase(),
                 style: TextStyle(
-                    color: gWhiteColor,
-                    fontFamily: gFontNunBold,
-                    fontSize: 16.0),
+                  color: gWhiteColor,
+                  fontFamily: gFontNunBold,
+                  fontSize: 16.0,
+                ),
               ),
             ),
           ),

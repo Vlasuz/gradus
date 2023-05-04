@@ -12,5 +12,3 @@ const gFontRobBold  = 'RobotoCondensed Bold';
 const gFontNunBold  = 'Nunito Bold';
 const gFontNunBlack = 'Nunito Black';
 const gFontNunReg   = 'Nunito Regular';
-
-String languageCode = 'ua';

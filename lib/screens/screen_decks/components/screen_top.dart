@@ -3,8 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradus/constants.dart';
 import 'package:gradus/states.dart';
 
+import '../index.dart';
+
 class ScreenTop extends StatefulWidget {
-  const ScreenTop({Key? key}) : super(key: key);
+  const ScreenTop({Key? key, this.onPressed}) : super(key: key);
+
+  final dynamic onPressed;
 
   @override
   State<ScreenTop> createState() => _ScreenTopState();
@@ -69,14 +73,10 @@ class _ScreenTopState extends State<ScreenTop> {
             height: 18.0,
             child: TextButton(
               style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                  foregroundColor: Colors.transparent),
-              onPressed: () {
-                setState(() {
-                  isOpenQuestionTop = true;
-                  print(isOpenQuestionTop);
-                });
-              },
+                padding: EdgeInsets.zero,
+                foregroundColor: Colors.transparent,
+              ),
+              onPressed: widget.onPressed,
               child: SvgPicture.asset('assets/icons/question.svg'),
             ),
           )

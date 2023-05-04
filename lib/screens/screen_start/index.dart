@@ -1,6 +1,12 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradus/constants.dart';
+import 'package:gradus/helpers/languages.dart';
+import 'package:gradus/states.dart';
 import '../../components/button_outline.dart';
 import '../../components/wrapper_screens.dart';
 import 'components/main_buttons.dart';
@@ -15,10 +21,11 @@ class ScreenMain extends StatefulWidget {
 }
 
 class _ScreenMainState extends State<ScreenMain> {
-  bool _isSettingsOpen = false;
+  // bool isOpenSettings = false;
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: gMainColor,
       body: WrapperScreens(
@@ -26,21 +33,21 @@ class _ScreenMainState extends State<ScreenMain> {
           children: [
             Container(
               width: double.infinity,
-              margin: EdgeInsets.only(top: 40.0, bottom: 40.0),
+              margin: const EdgeInsets.only(top: 40.0, bottom: 40.0),
               child: Column(
                 children: [
                   TopButtons(isSettingsOpen: () {
                     setState(() {
-                      _isSettingsOpen = true;
+                      isOpenSettings = true;
                     });
                   },),
-                  SizedBox(
+                  const SizedBox(
                     height: 6.0,
                   ),
                   Image.asset('assets/images/logo.png'),
-                  Spacer(),
-                  MainButtons(),
-                  Spacer(),
+                  const Spacer(),
+                  const MainButtons(),
+                  const Spacer(),
                   ButtonOutline(
                     child: Text(
                       "Залишити відгук".toUpperCase(),
@@ -57,15 +64,15 @@ class _ScreenMainState extends State<ScreenMain> {
                 ],
               ),
             ),
-            _isSettingsOpen ? Positioned(
+            isOpenSettings ? Positioned(
               child: SettingsWindow(
                   onPressed: () {
                     setState(() {
-                      _isSettingsOpen = false;
+                      isOpenSettings = false;
                     });
                   }
               ),
-            ) : SizedBox(),
+            ) : const SizedBox(),
           ],
         ),
       ),

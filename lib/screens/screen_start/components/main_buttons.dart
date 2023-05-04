@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gradus/states.dart';
 
 import '../../../components/button_green.dart';
 import '../../../components/button_orange.dart';
 import '../../../components/button_outline.dart';
 import '../../../constants.dart';
 
-class MainButtons extends StatelessWidget {
+class MainButtons extends StatefulWidget {
   const MainButtons({
     super.key,
   });
 
+  @override
+  State<MainButtons> createState() => _MainButtonsState();
+}
+
+class _MainButtonsState extends State<MainButtons> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +24,7 @@ class MainButtons extends StatelessWidget {
       child: Column(
         children: [
           ButtonGreen(
-            text: "Почати гру",
+            text: language.isEmpty ? '' : language['start_game'],
             onPressed: () {
               Navigator.pushNamed(context, '/start-players');
             },
@@ -27,7 +33,7 @@ class MainButtons extends StatelessWidget {
             height: 20.0,
           ),
           ButtonOrange(
-            text: "Додати карти",
+            text: language.isEmpty ? '' : language['add_cards'],
             onPressed: () {
               Navigator.pushNamed(context, '/decks');
             },
@@ -37,7 +43,7 @@ class MainButtons extends StatelessWidget {
           ),
           ButtonOutline(
             child: Text(
-              "Правила".toUpperCase(),
+              language.isEmpty ? '' : language['rules']?.toUpperCase(),
               style: const TextStyle(
                 color: gWhiteColor,
                 fontFamily: gFontNunBold,
@@ -61,7 +67,7 @@ class MainButtons extends StatelessWidget {
                   width: 10.0,
                 ),
                 Text(
-                  "Алкокалькулятор".toUpperCase(),
+                  language.isEmpty ? '' : language['alco_calculate']?.toUpperCase(),
                   style: const TextStyle(
                     color: gWhiteColor,
                     fontFamily: gFontNunBold,
@@ -71,6 +77,11 @@ class MainButtons extends StatelessWidget {
               ],
             ),
             onPressed: () {
+              calculateWeight = '';
+              calculateHeight = '';
+              calculateDrinkPercent1 = '';
+              calculateDrinkMl1 = '';
+              isButtonClickCalculate = false;
               Navigator.pushNamed(context, '/alco-calculate');
             },
           ),

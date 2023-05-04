@@ -89,11 +89,6 @@ class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
                     if(_numOfPlayers < allPlayers.length) {
                       _numOfPlayers++;
                     }
-                    // _scrollController.animateTo(
-                    //   _scrollController.position.maxScrollExtent,
-                    //   curve: Curves.easeOut,
-                    //   duration: const Duration(milliseconds: 300),
-                    // );
                     Future.delayed(Duration(milliseconds: 50)).asStream().listen((event) {
                       _scrollController.animateTo(
                         _scrollController.position.maxScrollExtent,
@@ -106,7 +101,7 @@ class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
                 child: Text('Добавить игрока'.toUpperCase(), style: const TextStyle(fontFamily: gFontNunBold, color: gWhiteColor, fontSize: 16.0),),
               ),
               const SizedBox(height: 20.0,),
-              ButtonGreen(text: "Продолжить", onPressed: () {
+              ButtonGreen(text: language.isEmpty ? '' : language['continue'], onPressed: () {
                 Navigator.pushNamed(context, '/start-info');
               })
             ],

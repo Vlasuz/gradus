@@ -36,7 +36,7 @@ class _ScreenAlcoCalculateState extends State<ScreenAlcoCalculate> {
               children: [
                 ScreenTop(),
                 Container(
-                  width: MediaQuery.of(context).size.width - 40,
+                  width: MediaQuery.of(context).size.width - 20,
                   margin: EdgeInsets.only(top: 20.0),
                   padding: EdgeInsets.all(20.0),
                   decoration: BoxDecoration(

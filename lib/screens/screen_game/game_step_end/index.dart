@@ -26,7 +26,7 @@ class GameStepEnd extends StatelessWidget {
                 height: 36.0,
               ),
               Container(
-                width: MediaQuery.of(context).size.width - 40,
+                width: MediaQuery.of(context).size.width - 60,
                 padding: EdgeInsets.only(top: 40.0, bottom: 40.0),
                 decoration: BoxDecoration(
                     color: gWhiteColor,

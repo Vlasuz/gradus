@@ -15,6 +15,8 @@ import 'package:gradus/screens/screen_start_cards/index.dart';
 import 'package:gradus/screens/screen_start_info/index.dart';
 import 'package:gradus/screens/screen_start_players/index.dart';
 
+import 'helpers/languages.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -24,7 +26,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    lang();
     return MaterialApp(
+      // debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         // useMaterial3: true,

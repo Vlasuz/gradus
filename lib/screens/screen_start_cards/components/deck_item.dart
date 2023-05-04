@@ -13,7 +13,7 @@ class DeckItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10.0),
-      width: MediaQuery.of(context).size.width - 40,
+      width: MediaQuery.of(context).size.width - 60,
       margin: EdgeInsets.only(bottom: 10.0),
       decoration: BoxDecoration(
           color: gWhiteColor, borderRadius: BorderRadius.circular(10.0)),

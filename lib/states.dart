@@ -66,7 +66,11 @@ final List<ModelPlayers> allPlayers = [
 ];
 
 
+Map language = {};
+String languageCode = 'ua';
 
+
+bool isButtonClickCalculate = false;
 bool calculateSex = false;
 bool calculateStomach = false;
 double calculateSum = 0.0;
@@ -79,7 +83,8 @@ String calculateDrinkMl2 = '0';
 String calculateDrinkPercent3 = '0';
 String calculateDrinkMl3 = '0';
 
+bool isOpenQuestion = false;
 
-bool isOpenQuestionTop = false;
-
-bool isButtonClickCalculate = false;
+bool isOpenSettings = false;
+bool isTurnVolume = true;
+bool isTurnAutoShuffling = true;

@@ -12,7 +12,7 @@ class WhiteBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width - 40,
+      width: MediaQuery.of(context).size.width - 60,
       padding: EdgeInsets.only(top: 30.0, bottom: 60.0),
       decoration: BoxDecoration(
           color: gWhiteColor,

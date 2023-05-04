@@ -3,7 +3,10 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:gradus/constants.dart';
 
 class SwitchCustom extends StatefulWidget {
-  SwitchCustom({Key? key}) : super(key: key);
+  SwitchCustom({Key? key, this.onSwitched, this.switchedValue}) : super(key: key);
+
+  final onSwitched;
+  final switchedValue;
 
   @override
   State<SwitchCustom> createState() => _SwitchCustomState();
@@ -15,7 +18,7 @@ class _SwitchCustomState extends State<SwitchCustom> {
   @override
   Widget build(BuildContext context) {
     return FlutterSwitch(
-      value: switcherTurn,
+      value: widget.switchedValue != null ? widget.switchedValue : switcherTurn,
       width: 47.0,
       height: 26.0,
       toggleSize: 20.0,
@@ -28,11 +31,11 @@ class _SwitchCustomState extends State<SwitchCustom> {
       ),
       activeColor: gGreenColor,
       inactiveColor: Color(0xFFCCCCCC),
-      onToggle: (val) {
+      onToggle: widget.onSwitched == null ? (val) {
         setState(() {
           switcherTurn = val;
         });
-      },
+      } : widget.onSwitched
     );
   }
 }
