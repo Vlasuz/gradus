@@ -25,7 +25,6 @@ class _ScreenMainState extends State<ScreenMain> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: gMainColor,
       body: WrapperScreens(
@@ -42,7 +41,7 @@ class _ScreenMainState extends State<ScreenMain> {
                     });
                   },),
                   const SizedBox(
-                    height: 6.0,
+                    height: 10.0,
                   ),
                   Image.asset('assets/images/logo.png'),
                   const Spacer(),

@@ -33,8 +33,9 @@ class PlayerItem extends StatelessWidget {
                 width: 20.0,
                 height: 20.0,
                 decoration: BoxDecoration(
-                    color: gWhiteColor,
-                    borderRadius: BorderRadius.circular(100.0)),
+                  color: gWhiteColor,
+                  borderRadius: BorderRadius.circular(100.0),
+                ),
                 child: Center(
                   child: Text(
                     id,
@@ -47,14 +48,14 @@ class PlayerItem extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 82.0,
+                height: 70.0,
                 width: 265.0,
                 child: Stack(
                   children: [
                     Positioned(
                       child: Center(
                         child: Container(
-                          height: 65.0,
+                          height: 60.0,
                           decoration: BoxDecoration(
                             color: colorBody,
                             borderRadius: BorderRadius.circular(80.0),
@@ -65,16 +66,15 @@ class PlayerItem extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          width: 82.0,
-                          height: 82.0,
+                          width: 70.0,
+                          height: 70.0,
                           decoration: BoxDecoration(
-                            color: colorIcon,
-                            borderRadius: BorderRadius.circular(100.0),
-                            border: Border.all(
-                              width: 1.0,
-                              color: gMainColor,
-                            )
-                          ),
+                              color: colorIcon,
+                              borderRadius: BorderRadius.circular(100.0),
+                              border: Border.all(
+                                width: 1.0,
+                                color: gMainColor,
+                              )),
                           child: Center(
                             child: icon,
                           ),
@@ -100,7 +100,9 @@ class PlayerItem extends StatelessWidget {
                 ),
               ),
               // SvgPicture.asset('assets/icons/delete-player.svg')
-              SizedBox(width: 20.0,)
+              SizedBox(
+                width: 20.0,
+              )
             ],
           )
         ],

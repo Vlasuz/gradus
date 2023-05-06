@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gradus/components/button_outline.dart';
 import 'package:gradus/components/wrapper_screens_elems.dart';
 import 'package:gradus/constants.dart';
+import 'package:gradus/helpers/navigator.dart';
 import 'components/screen_top.dart';
 import 'components/text_widget.dart';
 
@@ -39,7 +40,7 @@ class GameStepMenu extends StatelessWidget {
               // РЕФАКТОР!!!
               // РЕФАКТОР!!!
               Container(
-                height: MediaQuery.of(context).size.height / 1.5,
+                height: MediaQuery.of(context).size.height - 300,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -93,7 +94,7 @@ class GameStepMenu extends StatelessWidget {
                                 Expanded(
                                   child: TextButton(
                                     onPressed: () {
-                                      Navigator.pushNamed(context, '/game-step-looser');
+                                      navigator(context, '/game-step-looser');
                                     },
                                     style: TextButton.styleFrom(
                                       padding: EdgeInsets.zero,
@@ -126,7 +127,7 @@ class GameStepMenu extends StatelessWidget {
                                 Expanded(
                                   child: TextButton(
                                     onPressed: () {
-                                      Navigator.pushNamed(context, '/game-step-winner');
+                                      navigator(context, '/game-step-winner');
                                     },
                                     style: TextButton.styleFrom(
                                       padding: EdgeInsets.zero,

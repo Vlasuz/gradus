@@ -4,6 +4,7 @@ import 'package:gradus/components/button_green.dart';
 import 'package:gradus/components/button_outline.dart';
 import 'package:gradus/components/wrapper_screens.dart';
 import 'package:gradus/constants.dart';
+import 'package:gradus/helpers/navigator.dart';
 import '../components/player_item.dart';
 import 'components/buttons_done_or_not.dart';
 import 'components/screen_top.dart';
@@ -23,53 +24,56 @@ class _GameStep2State extends State<GameStep2> {
     return Scaffold(
       backgroundColor: gMainColor,
       body: WrapperScreens(
-        child: Container(
-          width: double.infinity,
-          margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
-          child: Column(
-            children: [
-              ScreenTop(),
-              SizedBox(
-                height: 18.0,
-              ),
-              PlayerItem(
-                title: 'Маленький перчик',
-                colorIcon: gGreenColor,
-                colorBody: gOrangeColor,
-                icon: SvgPicture.asset('assets/icons/player-avatar-1.svg'),
-              ),
-              SizedBox(
-                height: 36.0,
-              ),
-              Image.asset('assets/images/game_cards/card_coloda1_card1.png', height: MediaQuery.of(context).size.height / 2.5,),
-              Spacer(),
-              !_isHaveMenu
-                  ? ButtonsDoneOrNot()
-                  : ButtonGreen(
-                      text: 'Использовать меню',
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/game-step-menu');
-                      },
-                    ),
-              SizedBox(
-                height: 20.0,
-              ),
-              !_isHaveMenu
-                  ? FreeMenu()
-                  : ButtonOutline(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/game-step-result');
-                      },
-                      child: Text(
-                        'Кто самый пьяненький'.toUpperCase(),
-                        style: TextStyle(
-                          fontFamily: gFontNunBold,
-                          fontSize: 16.0,
-                          color: gWhiteColor,
-                        ),
+        child: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height,
+            margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
+            child: Column(
+              children: [
+                ScreenTop(),
+                SizedBox(
+                  height: 18.0,
+                ),
+                PlayerItem(
+                  title: 'Маленький перчик',
+                  colorIcon: gGreenColor,
+                  colorBody: gOrangeColor,
+                  icon: SvgPicture.asset('assets/icons/player-avatar-1.svg'),
+                ),
+                SizedBox(
+                  height: 36.0,
+                ),
+                Image.asset('assets/images/game_cards/card_coloda1_card1.png', height: MediaQuery.of(context).size.height / 2,),
+                SizedBox(height: 30.0,),
+                !_isHaveMenu
+                    ? ButtonsDoneOrNot()
+                    : ButtonGreen(
+                        text: 'Использовать меню',
+                        onPressed: () {
+                          navigator(context, '/game-step-menu');
+                        },
                       ),
-                    )
-            ],
+                SizedBox(
+                  height: 20.0,
+                ),
+                !_isHaveMenu
+                    ? FreeMenu()
+                    : ButtonOutline(
+                        onPressed: () {
+                          navigator(context, '/game-step-result');
+                        },
+                        child: Text(
+                          'Кто самый пьяненький'.toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: gFontNunBold,
+                            fontSize: 16.0,
+                            color: gWhiteColor,
+                          ),
+                        ),
+                      )
+              ],
+            ),
           ),
         ),
       ),
@@ -89,7 +93,7 @@ class FreeMenu extends StatelessWidget {
       children: [
         ButtonOutline(
           onPressed: () {
-            Navigator.pushNamed(context, '/game-step-menu');
+            navigator(context, '/game-step-menu');
           },
           child: Text(
             'Использовать Меню'.toUpperCase(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradus/components/button_green.dart';
+import 'package:gradus/helpers/navigator.dart';
 
 import '../../components/wrapper_screens.dart';
 import '../../constants.dart';
@@ -85,7 +86,7 @@ class _ScreenAlcoCalculateState extends State<ScreenAlcoCalculate> {
                         !calculateHeight.isEmpty &&
                         !calculateDrinkPercent1.isEmpty &&
                         !calculateDrinkMl1.isEmpty) {
-                      Navigator.pushNamed(context, '/alco-calculate-done');
+                      navigator(context, '/alco-calculate-done');
                     }
                   },
                 )

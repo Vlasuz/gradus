@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradus/helpers/navigator.dart';
 
 import '../../../../constants.dart';
 
@@ -15,7 +16,7 @@ class ButtonsDoneOrNot extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/game-step-looser');
+            navigator(context, '/game-step-looser');
           },
           style: TextButton.styleFrom(foregroundColor: gMainColor, padding: EdgeInsets.zero),
           child: Container(
@@ -41,7 +42,7 @@ class ButtonsDoneOrNot extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/game-step-winner');
+            navigator(context, '/game-step-winner');
           },
           style: TextButton.styleFrom(foregroundColor: gMainColor, padding: EdgeInsets.zero),
           child: Container(

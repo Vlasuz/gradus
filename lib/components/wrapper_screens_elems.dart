@@ -14,9 +14,11 @@ class WrapperScreensElems extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(10.0),
             child: Center(
-              child: SvgPicture.asset(
-                'assets/images/corners.svg',
-                width: double.infinity,
+              child: Image.asset(
+                'assets/images/CORNERS.png',
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fill,
+                height: MediaQuery.of(context).size.height,
               ),
             ),
           ),
@@ -28,8 +30,9 @@ class WrapperScreensElems extends StatelessWidget {
             child: Center(
               child: Image.asset(
                 'assets/images/background-elems.png',
-                width: double.infinity,
-                height: double.infinity,
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fill,
+                height: MediaQuery.of(context).size.height,
               ),
             ),
           ),

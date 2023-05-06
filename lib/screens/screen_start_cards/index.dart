@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gradus/helpers/navigator.dart';
 
 import '../../components/button_green.dart';
 import '../../components/wrapper_screens.dart';
@@ -54,7 +55,7 @@ class ScreenStartCards extends StatelessWidget {
               ButtonGreen(
                   text: "Понеслась",
                   onPressed: () {
-                    Navigator.pushNamed(context, '/game-step-1');
+                    navigator(context, '/game-step-1');
                   })
             ],
           ),

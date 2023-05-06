@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gradus/screens/screen_start/index.dart';
+import 'package:gradus/states.dart';
 
 class WrapperScreens extends StatelessWidget {
   const WrapperScreens({Key? key, this.child}) : super(key: key);
@@ -8,6 +10,7 @@ class WrapperScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Stack(
       children: [
         Positioned(
@@ -21,9 +24,10 @@ class WrapperScreens extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(10.0),
               child: Center(
-                child: SvgPicture.asset(
-                  'assets/images/corners.svg',
+                child: Image.asset(
+                  'assets/images/CORNERS.png',
                   width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.fill,
                   height: MediaQuery.of(context).size.height,
                 ),
               ),

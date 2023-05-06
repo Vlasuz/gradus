@@ -13,23 +13,27 @@ class ScreenRules extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: gMainColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset('assets/images/logo.png'),
-          Container(
-            height: 461.0,
-            margin: EdgeInsets.only(top: 50.0, bottom: 100.0),
-            child: TextWidget(),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.only(top: 98.0),
+          child: Column(
+            children: [
+              Image.asset('assets/images/logo.png'),
+              Container(
+                height: 461.0,
+                margin: const EdgeInsets.only(top: 40.0, bottom: 50.0),
+                child: const TextWidget(),
+              ),
+              ButtonGreen(
+                text: 'Понятненько',
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              SizedBox(height: 50.0,)
+            ],
           ),
-          ButtonGreen(
-            text: 'Понятненько',
-            onPressed: () {
-              // Navigator.pushNamed(context, '/start');
-              Navigator.pop(context);
-            },
-          ),
-        ],
+        ),
       ),
     );
   }

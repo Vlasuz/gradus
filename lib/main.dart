@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gradus/screens/screen_alcocalculate/index.dart';
 import 'package:gradus/screens/screen_alcocalculate_done/index.dart';
 import 'package:gradus/screens/screen_decks/index.dart';
@@ -14,11 +17,15 @@ import 'package:gradus/screens/screen_start/index.dart';
 import 'package:gradus/screens/screen_start_cards/index.dart';
 import 'package:gradus/screens/screen_start_info/index.dart';
 import 'package:gradus/screens/screen_start_players/index.dart';
+import 'package:gradus/states.dart';
+import 'package:flutter/services.dart';
 
 import 'helpers/languages.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main() async {
+  runApp(MyApp());
+  lang();
 }
 
 class MyApp extends StatelessWidget {
@@ -26,9 +33,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    lang();
     return MaterialApp(
-      // debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         // useMaterial3: true,

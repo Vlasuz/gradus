@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradus/components/wrapper_screens_elems.dart';
+import 'package:gradus/helpers/navigator.dart';
 
 import '../../components/button_green.dart';
 import '../../constants.dart';
@@ -73,7 +74,7 @@ class ScreenStartInfo extends StatelessWidget {
               ),
               const Spacer(),
               ButtonGreen(text: "Продолжить", onPressed: () {
-                Navigator.pushNamed(context, '/start-cards');
+                navigator(context, '/start-cards');
               })
             ],
           ),

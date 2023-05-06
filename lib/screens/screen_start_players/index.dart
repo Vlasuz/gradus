@@ -4,6 +4,7 @@ import 'package:gradus/components/button_green.dart';
 import 'package:gradus/components/button_orange.dart';
 import 'package:gradus/components/button_outline.dart';
 import 'package:gradus/constants.dart';
+import 'package:gradus/helpers/navigator.dart';
 
 import '../../components/wrapper_screens.dart';
 import 'components/player_item.dart';
@@ -12,7 +13,7 @@ import 'components/screen_top.dart';
 import '../../states.dart';
 
 class ScreenStartPlayers extends StatefulWidget {
-  ScreenStartPlayers({Key? key}) : super(key: key);
+  const ScreenStartPlayers({Key? key}) : super(key: key);
 
   @override
   State<ScreenStartPlayers> createState() => _ScreenStartPlayersState();
@@ -64,7 +65,7 @@ class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
               const Spacer(),
               ConstrainedBox(
                 constraints: BoxConstraints(
-                  maxHeight: MediaQuery.of(context).size.height - 600,
+                  maxHeight: MediaQuery.of(context).size.height - 550,
                 ),
                 child: SingleChildScrollView(
                   controller: _scrollController,
@@ -102,7 +103,7 @@ class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
               ),
               const SizedBox(height: 20.0,),
               ButtonGreen(text: language.isEmpty ? '' : language['continue'], onPressed: () {
-                Navigator.pushNamed(context, '/start-info');
+                navigator(context, '/start-info');
               })
             ],
           ),

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gradus/helpers/languages.dart';
+import 'package:gradus/helpers/navigator.dart';
+import 'package:gradus/screens/screen_alcocalculate/index.dart';
+import 'package:gradus/screens/screen_start_players/index.dart';
 import 'package:gradus/states.dart';
 
 import '../../../components/button_green.dart';
 import '../../../components/button_orange.dart';
 import '../../../components/button_outline.dart';
 import '../../../constants.dart';
+import '../index.dart';
 
 class MainButtons extends StatefulWidget {
   const MainButtons({
@@ -19,23 +24,29 @@ class MainButtons extends StatefulWidget {
 class _MainButtonsState extends State<MainButtons> {
   @override
   Widget build(BuildContext context) {
+
+    if(language.isEmpty) {
+      Future.delayed(Duration(seconds: 5));
+      lang();
+    }
+
     return Container(
       margin: EdgeInsets.only(bottom: 30.0),
       child: Column(
         children: [
           ButtonGreen(
-            text: language.isEmpty ? '' : language['start_game'],
+            text: language.isEmpty ? 'Почати гру' : language['start_game'],
             onPressed: () {
-              Navigator.pushNamed(context, '/start-players');
+              navigator(context, '/start-players');
             },
           ),
           SizedBox(
             height: 20.0,
           ),
           ButtonOrange(
-            text: language.isEmpty ? '' : language['add_cards'],
+            text: language.isEmpty ? 'Додати картки' : language['add_cards'],
             onPressed: () {
-              Navigator.pushNamed(context, '/decks');
+              navigator(context, '/decks');
             },
           ),
           SizedBox(
@@ -43,7 +54,7 @@ class _MainButtonsState extends State<MainButtons> {
           ),
           ButtonOutline(
             child: Text(
-              language.isEmpty ? '' : language['rules']?.toUpperCase(),
+              language.isEmpty ? 'Правила'.toUpperCase() : language['rules']?.toUpperCase(),
               style: const TextStyle(
                 color: gWhiteColor,
                 fontFamily: gFontNunBold,
@@ -51,7 +62,7 @@ class _MainButtonsState extends State<MainButtons> {
               ),
             ),
             onPressed: () {
-              Navigator.pushNamed(context, '/rules');
+              navigator(context, '/rules');
             },
           ),
           SizedBox(
@@ -67,7 +78,7 @@ class _MainButtonsState extends State<MainButtons> {
                   width: 10.0,
                 ),
                 Text(
-                  language.isEmpty ? '' : language['alco_calculate']?.toUpperCase(),
+                  language.isEmpty ? 'Алкокалькулятор'.toUpperCase() : language['alco_calculate']?.toUpperCase(),
                   style: const TextStyle(
                     color: gWhiteColor,
                     fontFamily: gFontNunBold,
@@ -82,7 +93,7 @@ class _MainButtonsState extends State<MainButtons> {
               calculateDrinkPercent1 = '';
               calculateDrinkMl1 = '';
               isButtonClickCalculate = false;
-              Navigator.pushNamed(context, '/alco-calculate');
+              navigator(context, '/alco-calculate');
             },
           ),
         ],

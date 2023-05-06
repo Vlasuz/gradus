@@ -11,4 +11,5 @@ lang() async {
   Map<String, dynamic> jsonMap = json.decode(jsonString);
 
   language = jsonMap[languageCode];
+
 }
