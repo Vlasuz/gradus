@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../constants.dart';
 
 class PlayerItem extends StatelessWidget {
+
   const PlayerItem({
     super.key,
     required this.id,

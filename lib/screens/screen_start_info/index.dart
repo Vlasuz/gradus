@@ -23,53 +23,56 @@ class ScreenStartInfo extends StatelessWidget {
               const SizedBox(
                 height: 6.0,
               ),
-              Image.asset('assets/images/logo.png'),
+              
               const Spacer(),
-              SizedBox(
+              Container(
                 width: 310.0,
-                child: Column(
-                  children: const [
-                    Text(
-                      'Выбери колоды:',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          fontFamily: gFontNunBlack,
-                          color: gWhiteColor),
-                    ),
-                    SizedBox(
-                      height: 21.0,
-                    ),
-                    Text(
-                      "По умолчанию включены все колоды. Если в вашей компании определённая колода не подходит – то её можно отключить.",
-                      style: TextStyle(
-                          fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      "",
-                      style: TextStyle(
-                          fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      "Полноценно играть можно и в пробную версию, но чтоб больше насладиться игрой, получить больше крутых заданий, открыть всё Бонус-меню и отключить рекламу необходимо купить колоды или комплекты",
-                      style: TextStyle(
-                          fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      "",
-                      style: TextStyle(
-                          fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      "Отключить рекламу навсегда можно купив одно из спецпредложений или 5 любых колод отдельно.",
-                      style: TextStyle(
-                          fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                height: MediaQuery.of(context).size.height / 1.7,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: const [
+                      Text(
+                        'Выбери колоды:',
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            fontFamily: gFontNunBlack,
+                            color: gWhiteColor),
+                      ),
+                      SizedBox(
+                        height: 21.0,
+                      ),
+                      Text(
+                        "По умолчанию включены все колоды. Если в вашей компании определённая колода не подходит – то её можно отключить.",
+                        style: TextStyle(
+                            fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "",
+                        style: TextStyle(
+                            fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "Полноценно играть можно и в пробную версию, но чтоб больше насладиться игрой, получить больше крутых заданий, открыть всё Бонус-меню и отключить рекламу необходимо купить колоды или комплекты",
+                        style: TextStyle(
+                            fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "",
+                        style: TextStyle(
+                            fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "Отключить рекламу навсегда можно купив одно из спецпредложений или 5 любых колод отдельно.",
+                        style: TextStyle(
+                            fontFamily: gFontRobReg, fontSize: 16.0, height: 1.5),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const Spacer(),

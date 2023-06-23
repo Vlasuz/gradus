@@ -24,56 +24,54 @@ class _GameStep2State extends State<GameStep2> {
     return Scaffold(
       backgroundColor: gMainColor,
       body: WrapperScreens(
-        child: SingleChildScrollView(
-          child: Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height,
-            margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
-            child: Column(
-              children: [
-                ScreenTop(),
-                SizedBox(
-                  height: 18.0,
-                ),
-                PlayerItem(
-                  title: 'Маленький перчик',
-                  colorIcon: gGreenColor,
-                  colorBody: gOrangeColor,
-                  icon: SvgPicture.asset('assets/icons/player-avatar-1.svg'),
-                ),
-                SizedBox(
-                  height: 36.0,
-                ),
-                Image.asset('assets/images/game_cards/card_coloda1_card1.png', height: MediaQuery.of(context).size.height / 2,),
-                SizedBox(height: 30.0,),
-                !_isHaveMenu
-                    ? ButtonsDoneOrNot()
-                    : ButtonGreen(
-                        text: 'Использовать меню',
-                        onPressed: () {
-                          navigator(context, '/game-step-menu');
-                        },
-                      ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                !_isHaveMenu
-                    ? FreeMenu()
-                    : ButtonOutline(
-                        onPressed: () {
-                          navigator(context, '/game-step-result');
-                        },
-                        child: Text(
-                          'Кто самый пьяненький'.toUpperCase(),
-                          style: TextStyle(
-                            fontFamily: gFontNunBold,
-                            fontSize: 16.0,
-                            color: gWhiteColor,
-                          ),
+        child: Container(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
+          child: Column(
+            children: [
+              ScreenTop(),
+              SizedBox(
+                height: 0.0,
+              ),
+              // PlayerItem(
+              //   title: 'Маленький перчик',
+              //   colorIcon: gGreenColor,
+              //   colorBody: gOrangeColor,
+              //   icon: SvgPicture.asset('assets/icons/player-avatar-1.svg'),
+              // ),
+              SizedBox(
+                height: 36.0,
+              ),
+              Image.asset('assets/images/game_cards/card_coloda1_card1.png', height: MediaQuery.of(context).size.height / 2,),
+              SizedBox(height: 30.0,),
+              !_isHaveMenu
+                  ? ButtonsDoneOrNot()
+                  : ButtonGreen(
+                      text: 'Использовать меню',
+                      onPressed: () {
+                        navigator(context, '/game-step-menu');
+                      },
+                    ),
+              SizedBox(
+                height: 20.0,
+              ),
+              !_isHaveMenu
+                  ? FreeMenu()
+                  : ButtonOutline(
+                      onPressed: () {
+                        navigator(context, '/game-step-result');
+                      },
+                      child: Text(
+                        'Кто самый пьяненький'.toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: gFontNunBold,
+                          fontSize: 16.0,
+                          color: gWhiteColor,
                         ),
-                      )
-              ],
-            ),
+                      ),
+                    )
+            ],
           ),
         ),
       ),

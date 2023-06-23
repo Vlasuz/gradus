@@ -30,11 +30,11 @@ class ScreenAlcoCalculateDone extends StatelessWidget {
     return Scaffold(
       backgroundColor: gMainColor,
       body: WrapperScreens(
-        child: SingleChildScrollView(
-          child: Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height,
-            margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
+        child: Container(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 const ScreenTop(),

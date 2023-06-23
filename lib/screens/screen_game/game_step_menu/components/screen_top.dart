@@ -13,7 +13,19 @@ class ScreenTop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(width: 18.0,),
+          Container(
+            width: 32.0,
+            height: 32.0,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  foregroundColor: Colors.transparent),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: SvgPicture.asset('assets/icons/icon-back-arrow.svg'),
+            ),
+          ),
           Text(
             'Бонус Меню',
             style: TextStyle(

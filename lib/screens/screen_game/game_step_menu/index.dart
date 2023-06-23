@@ -40,7 +40,7 @@ class GameStepMenu extends StatelessWidget {
               // РЕФАКТОР!!!
               // РЕФАКТОР!!!
               Container(
-                height: MediaQuery.of(context).size.height - 300,
+                height: MediaQuery.of(context).size.height - 220,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -337,32 +337,6 @@ class GameStepMenu extends StatelessWidget {
               // РЕФАКТОР!!!
               // РЕФАКТОР!!!
               // РЕФАКТОР!!!
-
-
-
-              Spacer(),
-              ButtonOutline(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset('assets/icons/arrow-back-button.svg'),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      'вернуться'.toUpperCase(),
-                      style: const TextStyle(
-                        fontFamily: gFontNunBold,
-                        fontSize: 16.0,
-                        color: gWhiteColor,
-                      ),
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
         ),

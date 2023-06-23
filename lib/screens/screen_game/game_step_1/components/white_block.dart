@@ -13,7 +13,7 @@ class WhiteBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width - 60,
-      padding: EdgeInsets.only(top: 30.0, bottom: 60.0),
+      padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
       decoration: BoxDecoration(
           color: gWhiteColor,
           borderRadius: BorderRadius.circular(10.0)),
@@ -28,7 +28,7 @@ class WhiteBlock extends StatelessWidget {
                   'assets/icons/player-avatar-2.svg'),
             ),
             SizedBox(
-              height: 32.0,
+              height: 20.0,
             ),
             Text(
               'Место № 0 ',
@@ -39,7 +39,7 @@ class WhiteBlock extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 30.0,
+              height: 25.0,
             ),
             Text(
               'Выпито:',

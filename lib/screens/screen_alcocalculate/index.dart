@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gradus/components/button_green.dart';
+import 'package:gradus/components/button_orange.dart';
 import 'package:gradus/helpers/navigator.dart';
 
 import '../../components/wrapper_screens.dart';
 import '../../constants.dart';
 import '../../states.dart';
+import 'components/add_drink.dart';
 import 'components/divider_custom.dart';
 import 'components/drinking_item.dart';
 import 'components/input_height.dart';
@@ -20,19 +22,32 @@ class ScreenAlcoCalculate extends StatefulWidget {
   State<ScreenAlcoCalculate> createState() => _ScreenAlcoCalculateState();
 }
 
+class Drink {
+  String percent;
+  String ml;
+
+  Drink(this.percent, this.ml);
+}
+
 class _ScreenAlcoCalculateState extends State<ScreenAlcoCalculate> {
   bool _isButtonClick = false;
+  List<Drink> drinkList = [
+    Drink(
+      '0',
+      '0',
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: gMainColor,
       body: WrapperScreens(
-        child: SingleChildScrollView(
-          child: Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height,
-            margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
+        child: Container(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          margin: const EdgeInsets.only(top: 60.0, bottom: 40.0),
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 ScreenTop(),
@@ -53,20 +68,43 @@ class _ScreenAlcoCalculateState extends State<ScreenAlcoCalculate> {
                       ),
                       InputHeight(),
                       DividerCustom(),
-                      DrinkItem(
-                        numberItem: '1',
+
+                      Column(
+                        children: drinkList.asMap().entries.map((item) => DrinkItem(numberItem: item.key + 1)).toList(),
                       ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      DrinkItem(
-                        numberItem: '2',
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      DrinkItem(
-                        numberItem: '3',
+
+                      // AddDrink(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          drinkList.length > 1 ? Container(
+                            width: MediaQuery.of(context).size.width / 2.4,
+                            child: ButtonOrange(
+                              text: 'Убрать',
+                              onPressed: () {
+                                setState(() {
+                                  drinkList.removeLast();
+                                });
+                              },
+                            ),
+                          ) : SizedBox(),
+                          drinkList.length < 3 ? Container(
+                            width: MediaQuery.of(context).size.width / 2.4,
+                            child: ButtonGreen(
+                              text: 'Добавить',
+                              onPressed: () {
+                                setState(() {
+                                  drinkList.add(
+                                      Drink(
+                                        '0',
+                                        '0'
+                                      )
+                                  );
+                                });
+                              },
+                            ),
+                          ) : SizedBox()
+                        ],
                       ),
                       DividerCustom(),
                       SwitchHungry(),

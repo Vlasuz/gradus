@@ -66,6 +66,12 @@ final List<ModelPlayers> allPlayers = [
 ];
 
 
+class ModelDrink {
+
+  ModelDrink();
+}
+
+
 Map language = {};
 String languageCode = 'ua';
 

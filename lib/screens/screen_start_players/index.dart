@@ -51,8 +51,6 @@ class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
               const SizedBox(
                 height: 6.0,
               ),
-              Image.asset('assets/images/logo.png'),
-              const Spacer(),
               const SizedBox(
                 width: 310.0,
                 child: Text(
@@ -65,7 +63,7 @@ class _ScreenStartPlayersState extends State<ScreenStartPlayers> {
               const Spacer(),
               ConstrainedBox(
                 constraints: BoxConstraints(
-                  maxHeight: MediaQuery.of(context).size.height - 550,
+                  maxHeight: MediaQuery.of(context).size.height - 450,
                 ),
                 child: SingleChildScrollView(
                   controller: _scrollController,

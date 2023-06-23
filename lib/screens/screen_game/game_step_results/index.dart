@@ -46,28 +46,28 @@ class GameStepResult extends StatelessWidget {
                 isWinner: false,
               ),
               Spacer(),
-              ButtonOutline(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset('assets/icons/arrow-back-button.svg'),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      'вернуться'.toUpperCase(),
-                      style: const TextStyle(
-                        fontFamily: gFontNunBold,
-                        fontSize: 16.0,
-                        color: gWhiteColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // ButtonOutline(
+              //   onPressed: () {
+              //     Navigator.pop(context);
+              //   },
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     children: [
+              //       SvgPicture.asset('assets/icons/arrow-back-button.svg'),
+              //       const SizedBox(
+              //         width: 10.0,
+              //       ),
+              //       Text(
+              //         'вернуться'.toUpperCase(),
+              //         style: const TextStyle(
+              //           fontFamily: gFontNunBold,
+              //           fontSize: 16.0,
+              //           color: gWhiteColor,
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),
